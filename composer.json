@@ -1,0 +1,42 @@
+{
+    "name": "apphp/flashes",
+    "description": "Flash messages for Laravel",
+    "keywords": ["apphp", "laravel", "larave-package", "laravel6-package", "laravel6"],
+    "homepage": "https://apphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Akopyan",
+            "email": "admin@apphp.com",
+            "homepage": "https://apphp.com/php-framework",
+            "role": "Founder and project lead"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "~5.0|^6.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "^6.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Apphp\\Flashes": "src/"
+        },
+        "files": [
+            "src/Apphp/Flashes/functions.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apphp\\Flashes\\FlashesServiceProvider"
+            ],
+            "aliases": {
+                "Flash": "Apphp\\Flashes\\Flash"
+            }
+        }
+    }
+}
