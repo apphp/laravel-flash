@@ -1,17 +1,17 @@
 <?php
 
-if (!function_exists('flash')) {
+if (!function_exists('flashes')) {
 
     /**
-     * Arrange for a flash message.
+     * Arrange for a flash messages
      *
      * @param string|null $message
      * @param string $level
      * @return \Apphp\Flashes\FlashesNotifier
      */
-    function flash($message = null, $level = 'info')
+    function flashes($message = null, $level = 'info')
     {
-        $notifier = app('flash');
+        $notifier = app('flashes');
 
         if (!is_null($message)) {
             return $notifier->message($message, $level);
