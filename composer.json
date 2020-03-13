@@ -34,7 +34,7 @@
                 "Apphp\\Flashes\\FlashesServiceProvider"
             ],
             "aliases": {
-                "Flash": "Apphp\\Flashes\\Flash"
+                "Flashes": "Apphp\\Flashes\\Flashes"
             }
         }
     }
