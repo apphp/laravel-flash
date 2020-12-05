@@ -4,13 +4,14 @@ namespace Apphp\Flashes;
 
 use Illuminate\Support\Traits\Macroable;
 
+
 class FlashesNotifier
 {
     use Macroable;
 
     /**
      * Store data in session
-     * @var SessionStore
+     * @var SessionFlashesStore
      */
     protected $session;
 
@@ -22,9 +23,9 @@ class FlashesNotifier
 
     /**
      * Constructor - creates a new instance
-     * @param SessionStore $session
+     * @param SessionFlashesStore $session
      */
-    function __construct(SessionStore $session)
+    function __construct(SessionFlashesStore $session)
     {
         $this->session = $session;
         $this->messages = collect();
@@ -124,7 +125,7 @@ class FlashesNotifier
      */
     protected function flash()
     {
-        $this->session->flash('flash_notification', $this->messages);
+        $this->session->flash('flashes_notification', $this->messages);
 
         return $this;
     }
