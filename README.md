@@ -1,4 +1,4 @@
-# Flash Messages for Laravel Applications
+# Simple Flash Messages for Laravel Applications
 
 This package allows to use Bootstrap flash messaging for Laravel framework applications.
 
@@ -17,7 +17,7 @@ In your controllers, before you perform a redirect or render a view, make a call
 ```php
 public function store()
 {
-    flash('Welcome Message!');
+    flashes('Welcome Message!');
 
     return redirect()->route('home');
 }
