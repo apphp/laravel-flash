@@ -23,12 +23,12 @@ class SessionFlashesStore
     }
 
     /**
-     * Flash a message to the session.
+     * Flashes a message to the session.
      *
      * @param string $name
      * @param array  $data
      */
-    public function flash($name, $data)
+    public function flashes($name, $data)
     {
         $this->session->flash($name, $data);
     }

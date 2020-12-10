@@ -3,7 +3,7 @@
 if (!function_exists('flashes')) {
 
     /**
-     * Arrange for a flash messages
+     * Arrange for a flashes messages
      *
      * @param string|null $message
      * @param string $level

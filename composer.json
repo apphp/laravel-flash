@@ -1,7 +1,7 @@
 {
     "name": "apphp/flashes",
     "description": "Flash messages for Laravel",
-    "keywords": ["apphp", "laravel", "larave-package", "laravel6-package", "laravel6"],
+    "keywords": ["apphp", "laravel", "laravel-package", "laravel6-package", "laravel6"],
     "homepage": "https://apphp.com",
     "license": "MIT",
     "authors": [

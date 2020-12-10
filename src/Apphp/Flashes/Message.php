@@ -26,10 +26,10 @@ class Message implements ArrayAccess
     public $level = 'info';
 
     /**
-     * Whether this message should auto hide
+     * Whether to show button or not
      * @var bool
      */
-    public $autoHide = false;
+    public $button = false;
 
     /**
      * Whether the message is an overlay

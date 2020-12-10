@@ -12,7 +12,7 @@ composer require apphp/flashes
 
 ## Usage
 
-In your controllers, before you perform a redirect or render a view, make a call to the `flash()` function.
+In your controllers, before you perform a redirect or render a view, make a call to the `flashes()` function.
 
 ```php
 public function store()
@@ -21,4 +21,10 @@ public function store()
 
     return redirect()->route('home');
 }
+```
+
+To show messages on view files, use the following:
+
+```html
+@include('flashes::message')
 ```

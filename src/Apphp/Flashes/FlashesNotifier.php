@@ -2,6 +2,7 @@
 
 namespace Apphp\Flashes;
 
+use Apphp\Flashes\SessionFlashesStore;
 use Illuminate\Support\Traits\Macroable;
 
 
@@ -85,7 +86,17 @@ class FlashesNotifier
 
         $this->messages->push($message);
 
-        return $this->flash();
+        return $this->flashes();
+    }
+
+    /**
+     * Add flash with a button
+     *
+     * @return $this
+     */
+    public function button()
+    {
+        return $this->updateLastMessage(['button' => true]);
     }
 
     /**
@@ -121,11 +132,11 @@ class FlashesNotifier
     }
 
     /**
-     * Flash all messages to the session
+     * Flashes all messages to the session
      */
-    protected function flash()
+    protected function flashes()
     {
-        $this->session->flash('flashes_notification', $this->messages);
+        $this->session->flashes('flashes_notification', $this->messages);
 
         return $this;
     }
