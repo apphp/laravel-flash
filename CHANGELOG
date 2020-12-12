@@ -2,12 +2,13 @@ Version 1.0.1 - Dec 12, 2020
 ----------------------------
 - Enh: added possibility to specify 3rd parameter in flashes() function - button
 - Fix: slashes in paths in FlashesServiceProvider
+- Fix: error in drawing message level
 
 
 Version 1.0.0 - Dec 09, 2020
 ----------------------------
-- ServiceProvider class
-- Naming changes
+- New: ServiceProvider class
+- Enh: Naming changes
 
 
 Version 0.0.1 - Mar 12, 2020 (Initial release)
