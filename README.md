@@ -1,4 +1,4 @@
-# Simple Flash Messages for Laravel Applications
+# Simple Flash Messages for Laravel Framework Applications
 
 This package allows to use Bootstrap flash messaging for Laravel framework applications.
 
