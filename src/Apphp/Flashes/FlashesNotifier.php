@@ -12,29 +12,33 @@ class FlashesNotifier
 
     /**
      * Store data in session
+     *
      * @var SessionFlashesStore
      */
     protected $session;
 
     /**
      * Collection of messages
+     *
      * @var \Illuminate\Support\Collection
      */
     public $messages;
 
     /**
      * Constructor - creates a new instance
-     * @param SessionFlashesStore $session
+     *
+     * @param  SessionFlashesStore  $session
      */
     function __construct(SessionFlashesStore $session)
     {
-        $this->session = $session;
+        $this->session  = $session;
         $this->messages = collect();
     }
 
     /**
      * Return an information message
-     * @param  string|null $message
+     *
+     * @param  string|null  $message
      * @return $this
      */
     public function info($message = null)
@@ -44,7 +48,8 @@ class FlashesNotifier
 
     /**
      * Return a success message
-     * @param  string|null $message
+     *
+     * @param  string|null  $message
      * @return $this
      */
     public function success($message = null)
@@ -54,7 +59,8 @@ class FlashesNotifier
 
     /**
      * Return an error message
-     * @param  string|null $message
+     *
+     * @param  string|null  $message
      * @return $this
      */
     public function error($message = null)
@@ -64,7 +70,8 @@ class FlashesNotifier
 
     /**
      * Return a warning message
-     * @param  string|null $message
+     *
+     * @param  string|null  $message
      * @return $this
      */
     public function warning($message = null)
@@ -74,17 +81,23 @@ class FlashesNotifier
 
     /**
      * Save a message
-     * @param  string|null $message
-     * @param  string|null $type
+     *
+     * @param  string|null  $message
+     * @param  string|null  $type
+     * @param  bool  $button
      * @return $this
      */
-    public function message($message = null, $type = null)
+    public function message($message = null, $type = null, $button = false)
     {
-        if (! $message instanceof Message) {
+        if ( ! $message instanceof Message) {
             $message = new Message(compact('message', 'type'));
         }
 
         $this->messages->push($message);
+
+        if ($button) {
+            $this->button();
+        }
 
         return $this->flashes();
     }
@@ -101,6 +114,7 @@ class FlashesNotifier
 
     /**
      * Add an attribute "hide" to the session
+     *
      * @return $this
      */
     public function hide()
@@ -110,6 +124,7 @@ class FlashesNotifier
 
     /**
      * Clear all messages
+     *
      * @return $this
      */
     public function clear()
@@ -121,7 +136,8 @@ class FlashesNotifier
 
     /**
      * Modify the last added message with attributes
-     * @param  array $overrides
+     *
+     * @param  array  $overrides
      * @return $this
      */
     protected function updateLastMessage($overrides = [])

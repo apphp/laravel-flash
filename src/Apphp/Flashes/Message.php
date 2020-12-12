@@ -9,37 +9,43 @@ class Message implements ArrayAccess
 {
     /**
      * The title of the message
+     *
      * @var string
      */
     public $title;
 
     /**
      * The body of the message
+     *
      * @var string
      */
     public $message;
 
     /**
      * The message type
+     *
      * @var string
      */
     public $level = 'info';
 
     /**
      * Whether to show button or not
+     *
      * @var bool
      */
     public $button = false;
 
     /**
      * Whether the message is an overlay
+     *
      * @var bool
      */
     public $overlay = false;
 
     /**
      * Constructor - create a new message instance
-     * @param array $attributes
+     *
+     * @param  array  $attributes
      */
     public function __construct($attributes = [])
     {
@@ -48,7 +54,8 @@ class Message implements ArrayAccess
 
     /**
      * Update message attributes
-     * @param  array $attributes
+     *
+     * @param  array  $attributes
      * @return $this
      */
     public function update($attributes = [])
@@ -65,7 +72,7 @@ class Message implements ArrayAccess
     /**
      * Whether the given offset exists.
      *
-     * @param  mixed $offset
+     * @param  mixed  $offset
      * @return bool
      */
     public function offsetExists($offset)
@@ -76,7 +83,7 @@ class Message implements ArrayAccess
     /**
      * Fetch the offset.
      *
-     * @param  mixed $offset
+     * @param  mixed  $offset
      * @return mixed
      */
     public function offsetGet($offset)
@@ -87,7 +94,7 @@ class Message implements ArrayAccess
     /**
      * Assign the offset.
      *
-     * @param  mixed $offset
+     * @param  mixed  $offset
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -98,7 +105,7 @@ class Message implements ArrayAccess
     /**
      * Unset the offset.
      *
-     * @param  mixed $offset
+     * @param  mixed  $offset
      * @return void
      */
     public function offsetUnset($offset)

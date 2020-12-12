@@ -15,7 +15,7 @@ class SessionFlashesStore
     /**
      * Create a new session store instance.
      *
-     * @param Store $session
+     * @param  Store  $session
      */
     function __construct(Store $session)
     {
@@ -25,8 +25,8 @@ class SessionFlashesStore
     /**
      * Flashes a message to the session.
      *
-     * @param string $name
-     * @param array  $data
+     * @param  string  $name
+     * @param  array  $data
      */
     public function flashes($name, $data)
     {

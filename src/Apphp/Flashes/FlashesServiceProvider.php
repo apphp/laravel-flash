@@ -25,9 +25,12 @@ class FlashesServiceProvider extends ServiceProvider
             'Apphp\Flashes\SessionFlashesStore'
         );
 
-        $this->app->singleton('flashes', function () {
-            return $this->app->make('Apphp\Flashes\FlashesNotifier');
-        });
+        $this->app->singleton(
+            'flashes',
+            function () {
+                return $this->app->make('Apphp\Flashes\FlashesNotifier');
+            }
+        );
     }
 
     /**
@@ -37,11 +40,15 @@ class FlashesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../../views', 'flashes');
+        $dir = trim(__DIR__, '/');
 
-        $this->publishes([
-            __DIR__ . '/../../views' => base_path('resources/views/vendor/flashes')
-        ]);
+        $this->loadViewsFrom($dir.'/../../views', 'flashes');
+
+        $this->publishes(
+            [
+                $dir.'/../../views' => base_path('resources/views/vendor/flashes')
+            ]
+        );
     }
 
 }
