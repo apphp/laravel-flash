@@ -83,14 +83,14 @@ class FlashesNotifier
      * Save a message
      *
      * @param  string|null  $message
-     * @param  string|null  $type
+     * @param  string|null  $level
      * @param  bool  $button
      * @return $this
      */
-    public function message($message = null, $type = null, $button = false)
+    public function message($message = null, $level = null, $button = false)
     {
         if ( ! $message instanceof Message) {
-            $message = new Message(compact('message', 'type'));
+            $message = new Message(compact('message', 'level'));
         }
 
         $this->messages->push($message);
