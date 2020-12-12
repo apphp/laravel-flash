@@ -36,13 +36,6 @@ class Message implements ArrayAccess
     public $button = false;
 
     /**
-     * Whether the message is an overlay
-     *
-     * @var bool
-     */
-    public $overlay = false;
-
-    /**
      * Constructor - create a new message instance
      *
      * @param  array  $attributes
