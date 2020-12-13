@@ -43,5 +43,5 @@ To show messages on view files, use the following:
 If you need to modify the flash message, you can run:
 
 ```bash
-php artisan vendor:publish --provider="Laracasts\Flash\FlashServiceProvider"
+php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
 ```
