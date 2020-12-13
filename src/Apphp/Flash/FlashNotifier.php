@@ -76,7 +76,7 @@ class FlashNotifier
      */
     public function error($message = null)
     {
-        return $this->message($message, 'error');
+        return $this->danger($message);
     }
 
     /**
@@ -88,7 +88,7 @@ class FlashNotifier
      */
     public function danger($message = null)
     {
-        return $this->error($message);
+        return $this->message($message, 'danger');
     }
 
     /**
