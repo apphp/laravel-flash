@@ -105,4 +105,5 @@ class Message implements ArrayAccess
     {
         //
     }
+
 }

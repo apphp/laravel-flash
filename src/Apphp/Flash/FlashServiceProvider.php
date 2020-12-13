@@ -50,5 +50,5 @@ class FlashServiceProvider extends ServiceProvider
             ]
         );
     }
-}
 
+}
