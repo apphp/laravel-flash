@@ -1,6 +1,6 @@
 <?php
 
-namespace Apphp\Flashes;
+namespace Apphp\Flash;
 
 use \ArrayAccess;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Apphp\Flashes;
+namespace Apphp\Flash;
 
 use Illuminate\Support\ServiceProvider;
 
 
-class FlashesServiceProvider extends ServiceProvider
+class FlashServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of this provider is deferred
@@ -22,13 +22,13 @@ class FlashesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'Apphp\Flashes\SessionFlashesStore'
+            'Apphp\Flash\SessionFlashStore'
         );
 
         $this->app->singleton(
-            'flashes',
+            'flash',
             function () {
-                return $this->app->make('Apphp\Flashes\FlashesNotifier');
+                return $this->app->make('Apphp\Flash\FlashNotifier');
             }
         );
     }
@@ -42,11 +42,11 @@ class FlashesServiceProvider extends ServiceProvider
     {
         $dir = trim(__DIR__, '/');
 
-        $this->loadViewsFrom($dir.'/../../views', 'flashes');
+        $this->loadViewsFrom($dir.'/../views', 'flash');
 
         $this->publishes(
             [
-                $dir.'/../../views' => base_path('resources/views/vendor/flashes')
+                $dir.'/../views' => base_path('resources/views/vendor/flash')
             ]
         );
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Apphp\Flashes;
+namespace Apphp\Flash;
 
 use Illuminate\Support\Facades\Facade;
 
 
-class Flashes extends Facade
+class Flash extends Facade
 {
     /**
      * Get the binding in the IoC container
@@ -14,6 +14,6 @@ class Flashes extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'flashes';
+        return 'flash';
     }
 }

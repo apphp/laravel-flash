@@ -1,19 +1,19 @@
 <?php
 
-namespace Apphp\Flashes;
+namespace Apphp\Flash;
 
-use Apphp\Flashes\SessionFlashesStore;
+use Apphp\Flash\SessionFlashStore;
 use Illuminate\Support\Traits\Macroable;
 
 
-class FlashesNotifier
+class FlashNotifier
 {
     use Macroable;
 
     /**
      * Store data in session
      *
-     * @var SessionFlashesStore
+     * @var SessionFlashStore
      */
     protected $session;
 
@@ -27,23 +27,34 @@ class FlashesNotifier
     /**
      * Constructor - creates a new instance
      *
-     * @param  SessionFlashesStore  $session
+     * @param  SessionFlashStore  $session
      */
-    function __construct(SessionFlashesStore $session)
+    function __construct(SessionFlashStore $session)
     {
         $this->session  = $session;
         $this->messages = collect();
     }
 
     /**
-     * Return an information message
+     * Return a primary message
      *
      * @param  string|null  $message
      * @return $this
      */
-    public function info($message = null)
+    public function primary($message = null)
     {
-        return $this->message($message, 'info');
+        return $this->message($message, 'primary');
+    }
+
+    /**
+     * Return a secondary message
+     *
+     * @param  string|null  $message
+     * @return $this
+     */
+    public function secondary($message = null)
+    {
+        return $this->message($message, 'secondary');
     }
 
     /**
@@ -69,6 +80,18 @@ class FlashesNotifier
     }
 
     /**
+     * Return an error message
+     * Alias to error()
+     *
+     * @param  string|null  $message
+     * @return $this
+     */
+    public function danger($message = null)
+    {
+        return $this->error($message);
+    }
+
+    /**
      * Return a warning message
      *
      * @param  string|null  $message
@@ -78,6 +101,18 @@ class FlashesNotifier
     {
         return $this->message($message, 'warning');
     }
+
+    /**
+     * Return an information message
+     *
+     * @param  string|null  $message
+     * @return $this
+     */
+    public function info($message = null)
+    {
+        return $this->message($message, 'info');
+    }
+
 
     /**
      * Save a message
@@ -99,7 +134,7 @@ class FlashesNotifier
             $this->button();
         }
 
-        return $this->flashes();
+        return $this->flash();
     }
 
     /**
@@ -150,9 +185,9 @@ class FlashesNotifier
     /**
      * Flashes all messages to the session
      */
-    protected function flashes()
+    protected function flash()
     {
-        $this->session->flashes('flashes_notification', $this->messages);
+        $this->session->flash('flash_notification', $this->messages);
 
         return $this;
     }

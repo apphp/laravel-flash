@@ -1,4 +1,4 @@
-@foreach (session('flashes_notification', collect())->toArray() as $message)
+@foreach (session('flash_notification', collect())->toArray() as $message)
     <div class="alert alert-{{ $message['level'] }}" role="alert">
         @if ($message['button'])
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -6,4 +6,4 @@
         {!! $message['message'] !!}
     </div>
 @endforeach
-{{ session()->forget('flashes_notification') }}
+{{ session()->forget('flash_notification') }}

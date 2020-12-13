@@ -1,11 +1,11 @@
 <?php
 
-namespace Apphp\Flashes;
+namespace Apphp\Flash;
 
 use Illuminate\Session\Store;
 
 
-class SessionFlashesStore
+class SessionFlashStore
 {
     /**
      * @var Store
@@ -28,7 +28,7 @@ class SessionFlashesStore
      * @param  string  $name
      * @param  array  $data
      */
-    public function flashes($name, $data)
+    public function flash($name, $data)
     {
         $this->session->flash($name, $data);
     }

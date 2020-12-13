@@ -1,3 +1,10 @@
+Version 1.1.0 - Dec 13, 2020
+----------------------------
+- New: added new types of messages: "primary", "secondary" and "error"
+- Enh: renamed into flash() instead of old name "flashes()"
+- Fix: error in loading view path
+
+
 Version 1.0.1 - Dec 12, 2020
 ----------------------------
 - Enh: added possibility to specify 3rd parameter in flashes() function - button
