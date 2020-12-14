@@ -45,3 +45,16 @@ If you need to modify the flash message, you can run:
 ```bash
 php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
 ```
+
+## Show Multiple Messages
+
+If you need to flash multiple flash messages, you may simply define them one after another.
+
+```php
+flash('First Message', 'success');
+flash('Second Message', 'warning', true);
+
+return redirect('somewhere');
+```
+
+Take in account, that you'll not see flash messages if you don't perform redirect.
