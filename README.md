@@ -33,6 +33,14 @@ You may also define following flash messages:
 - `flash('your-message', 'warning')`: Set the flash type to "error".
 - `flash('your-message', 'error')`: Set the flash type to "error" with a close button to the flash message.
 
+You may also use facade directly:
+```php
+use Apphp\Flash\Flash;
+```
+- `Flash::success('your-message')`: Set the success flash message.
+- `Flash::error('your-message')`: Set the error flash message.
+etc.
+
 
 To show messages on view files, use the following:
 
@@ -58,3 +66,27 @@ return redirect('somewhere');
 ```
 
 Take in account, that you'll not see flash messages if you don't perform redirect.
+
+## Clear Messages
+
+If you need to clear flash messages, you may do it in the following way:
+
+```php
+// All previously defined messages will be removed
+flash('First Message', 'error');
+flash('Second Message', 'danger')->clear();
+
+// All previously defined messages will be removed
+flash('First Message', 'error');
+flash('Second Message', 'danger');
+Flash::success('Third Message');
+flash()->clear();
+
+Flash::success('First Message');
+// Only current message will be removed
+Flash::error('Second Message')->clear();
+
+return redirect('somewhere');
+```
+
+

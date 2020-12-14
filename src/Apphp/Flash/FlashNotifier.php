@@ -113,7 +113,6 @@ class FlashNotifier
         return $this->message($message, 'info');
     }
 
-
     /**
      * Save a message
      *
