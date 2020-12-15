@@ -30,20 +30,25 @@ public function store()
 
 You may also define following flash messages:
 
-- `flash('your-message', 'primary')`: Set the flash type to "primary".
-- `flash('your-message', 'secondary')`: Set the flash type to "secondary".
-- `flash('your-message', 'success')`: Set the flash type to "success".
-- `flash('your-message', 'danger')`: Set the flash type to "error".
-- `flash('your-message', 'error')`: Set the flash type to "error" (alias to "danger").
-- `flash('your-message', 'warning')`: Set the flash type to "error".
-- `flash('your-message', 'error')`: Set the flash type to "error" with a close button to the flash message.
+| method                                    | description                                                               |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `flash('your-message', 'primary')`        | Set the flash type to "primary".                                          |
+| `flash('your-message', 'secondary')`      | Set the flash type to "secondary".                                        |
+| `flash('your-message', 'success')`        | Set the flash type to "success".                                          |
+| `flash('your-message', 'danger')`         | Set the flash type to "error".                                            |
+| `flash('your-message', 'error')`          | Set the flash type to "error" (alias to "danger").                        |
+| `flash('your-message', 'warning')`        | Set the flash type to "error".                                            |
+| `flash('your-message', 'error')`          | Set the flash type to "error" with a close button to the flash message.   |
 
 You may also use facade directly:
 ```php
 use Apphp\Flash\Flash;
 ```
-- `Flash::success('your-message')`: Set the success flash message.
-- `Flash::error('your-message')`: Set the error flash message.
+
+| method                                    | description                                                               |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `Flash::success('your-message')`          | Set the success flash message.                                            |
+| `Flash::error('your-message')`            |  Set the flash type to "error" with a close button to the flash message.  |
 etc.
 
 
