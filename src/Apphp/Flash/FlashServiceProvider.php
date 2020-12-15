@@ -40,7 +40,7 @@ class FlashServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $dir = trim(__DIR__, '/');
+        $dir = rtrim(__DIR__, '/');
 
         $this->loadViewsFrom($dir.'/../views', 'flash');
 
