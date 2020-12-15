@@ -1,6 +1,11 @@
 # Simple Flash Messages for Laravel Framework Applications
 
-This package allows to use Bootstrap 3/4 flash messaging for Laravel framework applications.
+This package allows to use Bootstrap 3/4 flash messaging for Laravel 6+ framework applications.
+
+## Requirements
+
+* php >=7.0
+* Laravel 6+
 
 ## Installation
 
@@ -89,4 +94,7 @@ Flash::error('Second Message')->clear();
 return redirect('somewhere');
 ```
 
+## License
 
+This project is released under the MIT License.   
+Copyright © 2020 [ApPHP](https://www.apphp.com/).
