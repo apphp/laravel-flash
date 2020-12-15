@@ -39,44 +39,48 @@ class FlashNotifier
      * Return a primary message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function primary($message = null)
+    public function primary($message = null, $button = false)
     {
-        return $this->message($message, 'primary');
+        return $this->message($message, 'primary', $button);
     }
 
     /**
      * Return a secondary message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function secondary($message = null)
+    public function secondary($message = null, $button = false)
     {
-        return $this->message($message, 'secondary');
+        return $this->message($message, 'secondary', $button);
     }
 
     /**
      * Return a success message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function success($message = null)
+    public function success($message = null, $button = false)
     {
-        return $this->message($message, 'success');
+        return $this->message($message, 'success', $button);
     }
 
     /**
      * Return an error message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function error($message = null)
+    public function error($message = null, $button = false)
     {
-        return $this->danger($message);
+        return $this->danger($message, $button);
     }
 
     /**
@@ -84,33 +88,36 @@ class FlashNotifier
      * Alias to error()
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function danger($message = null)
+    public function danger($message = null, $button = false)
     {
-        return $this->message($message, 'danger');
+        return $this->message($message, 'danger', $button);
     }
 
     /**
      * Return a warning message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function warning($message = null)
+    public function warning($message = null, $button = false)
     {
-        return $this->message($message, 'warning');
+        return $this->message($message, 'warning', $button);
     }
 
     /**
      * Return an information message
      *
      * @param  string|null  $message
+     * @param  bool  $button
      * @return $this
      */
-    public function info($message = null)
+    public function info($message = null, $button = false)
     {
-        return $this->message($message, 'info');
+        return $this->message($message, 'info', $button);
     }
 
     /**
