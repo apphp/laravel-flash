@@ -1,5 +1,6 @@
-Version 1.1.2 - Dec 15, 2020
+Version 1.2.0 - Dec 15, 2020
 ----------------------------
+- New: added possibility to show close button, while using facade or global function
 - Enh: added MIT licence
 - Enh: visual changes in README
 - Fix: error on loading view file in Linux OS
