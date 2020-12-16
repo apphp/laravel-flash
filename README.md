@@ -100,6 +100,14 @@ Flash::error('Second Message')->clear();
 return redirect('somewhere');
 ```
 
+## Customization
+
+To change HTML template of the message or use your own, publish view file and customize it according to suit your needs.
+```php
+$ php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
+```
+
+
 ## License
 
 This project is released under the MIT License.   
