@@ -1,3 +1,8 @@
+Version 1.2.x -
+----------------------------
+- Enh: changes in README
+
+
 Version 1.2.0 - Dec 15, 2020
 ----------------------------
 - New: added possibility to show close button, while using facade or global function

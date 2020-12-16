@@ -1,3 +1,6 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
+
 # Simple Flash Messages for Laravel Framework Applications
 
 This package allows to use Bootstrap 3/4 flash messaging for Laravel 6+ framework applications.
