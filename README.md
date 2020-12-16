@@ -3,12 +3,21 @@
 
 # Simple Flash Messages for Laravel Framework Applications
 
-This package allows to use Bootstrap 3/4 flash messaging for Laravel 6+ framework applications.
+This package allows to use Bootstrap 3/4/5 flash messaging for Laravel 6+ framework applications.
+
 
 ## Requirements
 
 * php >=7.0
 * Laravel 6+
+* Bootstrap 3+
+
+
+## License
+
+This project is released under the MIT License.   
+Copyright © 2020 [ApPHP](https://www.apphp.com/).
+
 
 ## Installation
 
@@ -17,6 +26,15 @@ Begin by pulling in the package through Composer.
 ```bash
 composer require apphp/flash
 ```
+
+Next, make sure the default CSS classes for your flash message are optimized for Bootstrap. You may either pull in the Bootstrap's CSS 
+within your HTML or layout file, or write your own CSS classes based on them. If you use Bootstrap 3, part of classes, like "primary" and 
+"secondary" will not have styling. 
+
+```html
+<link rel="stylesheet" href="//getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+```
+
 
 ## Usage
 
@@ -68,6 +86,7 @@ If you need to modify the flash message, you can run:
 php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
 ```
 
+
 ## Show Multiple Messages
 
 If you need to flash multiple flash messages, you may simply define them one after another.
@@ -80,6 +99,7 @@ return redirect('somewhere');
 ```
 
 Take in account, that you'll not see flash messages if you don't perform redirect.
+
 
 ## Clear Messages
 
@@ -103,6 +123,7 @@ Flash::error('Second Message')->clear();
 return redirect('somewhere');
 ```
 
+
 ## Customization
 
 To change HTML template of the message or use your own, publish view file and customize it according to suit your needs.
@@ -110,8 +131,3 @@ To change HTML template of the message or use your own, publish view file and cu
 $ php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
 ```
 
-
-## License
-
-This project is released under the MIT License.   
-Copyright © 2020 [ApPHP](https://www.apphp.com/).

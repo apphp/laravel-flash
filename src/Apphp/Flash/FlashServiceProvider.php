@@ -40,6 +40,7 @@ class FlashServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Prepare dir to work in Win and Lin environments
         $dir = rtrim(__DIR__, '/');
 
         $this->loadViewsFrom($dir.'/../views', 'flash');
