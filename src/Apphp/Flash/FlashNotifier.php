@@ -166,16 +166,6 @@ class FlashNotifier
     }
 
     /**
-     * Add an attribute "hide" to the session
-     *
-     * @return $this
-     */
-    public function hide()
-    {
-        return $this->updateLastMessage(['hide' => true]);
-    }
-
-    /**
      * Clear all messages
      *
      * @return $this
