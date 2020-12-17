@@ -124,6 +124,39 @@ Flash::error('Second Message')->clear();
 return redirect('somewhere');
 ```
 
+## Hide Messages
+
+Generally you're expecting from the flash messages to be shown for a few seconds, and then they will be closed (if this message is not important). 
+To handle such behaviour, you may write a simple JavaScript code. For example, using jQuery, you might add the following snippet just before 
+the closing `</body>` tag.
+
+```html
+<script>
+    $('div.alert').not('.alert-important').delay(5000).fadeOut(250);
+</script>
+```
+
+or with pure CSS
+
+```html
+<style>
+div.alert:not(.alert-important) {
+    -webkit-animation: cssAnimation 5s forwards;
+    animation: cssAnimation 5s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
+    90%  {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
+    100% {opacity: 0; height:0px; padding:0; margin:0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
+    90%  {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
+    100% {opacity: 0; height:0px; padding:0; margin:0;}
+}
+</style>
+``` 
+
 
 ## Customization
 

@@ -6,15 +6,15 @@ if ( ! function_exists('flash')) {
      *
      * @param  string|null  $message
      * @param  string  $level
-     * @param  bool  $button
+     * @param  bool  $important
      * @return \Apphp\Flash\FlashNotifier
      */
-    function flash($message = null, $level = 'info', $button = false)
+    function flash($message = null, $level = 'info', $important = false)
     {
         $notifier = app('flash');
 
         if ( ! is_null($message)) {
-            return $notifier->message($message, $level, $button);
+            return $notifier->message($message, $level, $important);
         }
 
         return $notifier;

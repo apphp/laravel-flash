@@ -39,48 +39,48 @@ class FlashNotifier
      * Return a primary message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function primary($message = null, $button = false)
+    public function primary($message = null, $important = false)
     {
-        return $this->message($message, 'primary', $button);
+        return $this->message($message, 'primary', $important);
     }
 
     /**
      * Return a secondary message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function secondary($message = null, $button = false)
+    public function secondary($message = null, $important = false)
     {
-        return $this->message($message, 'secondary', $button);
+        return $this->message($message, 'secondary', $important);
     }
 
     /**
      * Return a success message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function success($message = null, $button = false)
+    public function success($message = null, $important = false)
     {
-        return $this->message($message, 'success', $button);
+        return $this->message($message, 'success', $important);
     }
 
     /**
      * Return an error message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function error($message = null, $button = false)
+    public function error($message = null, $important = false)
     {
-        return $this->danger($message, $button);
+        return $this->danger($message, $important);
     }
 
     /**
@@ -88,48 +88,48 @@ class FlashNotifier
      * Alias to error()
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function danger($message = null, $button = false)
+    public function danger($message = null, $important = false)
     {
-        return $this->message($message, 'danger', $button);
+        return $this->message($message, 'danger', $important);
     }
 
     /**
      * Return a warning message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function warning($message = null, $button = false)
+    public function warning($message = null, $important = false)
     {
-        return $this->message($message, 'warning', $button);
+        return $this->message($message, 'warning', $important);
     }
 
     /**
      * Return an information message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function info($message = null, $button = false)
+    public function info($message = null, $important = false)
     {
-        return $this->message($message, 'info', $button);
+        return $this->message($message, 'info', $important);
     }
 
     /**
      * Return a simple light message
      *
      * @param  string|null  $message
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function light($message = null, $button = false)
+    public function light($message = null, $important = false)
     {
-        return $this->message($message, 'light', $button);
+        return $this->message($message, 'light', $important);
     }
 
     /**
@@ -137,10 +137,10 @@ class FlashNotifier
      *
      * @param  string|null  $message
      * @param  string|null  $level
-     * @param  bool  $button
+     * @param  bool  $important
      * @return $this
      */
-    public function message($message = null, $level = null, $button = false)
+    public function message($message = null, $level = null, $important = false)
     {
         if ( ! $message instanceof Message) {
             $message = new Message(compact('message', 'level'));
@@ -148,7 +148,7 @@ class FlashNotifier
 
         $this->messages->push($message);
 
-        if ($button) {
+        if ($important) {
             $this->button();
         }
 

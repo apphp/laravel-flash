@@ -29,11 +29,11 @@ class Message implements ArrayAccess
     public $level = 'info';
 
     /**
-     * Whether to show button or not
+     * Whether this message important or not
      *
      * @var bool
      */
-    public $button = false;
+    public $important = false;
 
     /**
      * Constructor - create a new message instance
