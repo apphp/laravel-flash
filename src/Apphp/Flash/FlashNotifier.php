@@ -149,20 +149,20 @@ class FlashNotifier
         $this->messages->push($message);
 
         if ($important) {
-            $this->button();
+            $this->important();
         }
 
         return $this->flash();
     }
 
     /**
-     * Add flash with a button
+     * Change flash to be important
      *
      * @return $this
      */
-    public function button()
+    public function important()
     {
-        return $this->updateLastMessage(['button' => true]);
+        return $this->updateLastMessage(['important' => true]);
     }
 
     /**
