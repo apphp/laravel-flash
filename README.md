@@ -60,6 +60,7 @@ You may also define following flash messages:
 | `flash('your-message', 'danger')`         | Set the flash type to "error".                                                |
 | `flash('your-message', 'error')`          | Set the flash type to "error" (alias to "danger") without a close button.     |
 | `flash('your-message', 'error', true)`    | Set the flash type to "error" with a close button to the flash message.       |
+| `flash('your-message', 'light')`          | Set the flash type to "light".                                                |
 
 You may also use facade directly:
 ```php

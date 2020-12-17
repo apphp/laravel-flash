@@ -121,6 +121,18 @@ class FlashNotifier
     }
 
     /**
+     * Return a simple light message
+     *
+     * @param  string|null  $message
+     * @param  bool  $button
+     * @return $this
+     */
+    public function light($message = null, $button = false)
+    {
+        return $this->message($message, 'light', $button);
+    }
+
+    /**
      * Save a message
      *
      * @param  string|null  $message
