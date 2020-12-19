@@ -25,123 +25,45 @@ class FlashNotifier
     public $messages;
 
     /**
+     * Collection of allowed methods
+     * @var array
+     */
+    protected $allowedMethods = ['primary', 'secondary', 'success', 'warning', 'info', 'error', 'danger', 'light', 'dark'];
+
+
+    /**
      * Constructor - creates a new instance
      *
      * @param  SessionFlashStore  $session
      */
-    function __construct(SessionFlashStore $session)
+    public function __construct(SessionFlashStore $session)
     {
         $this->session  = $session;
         $this->messages = collect();
     }
 
     /**
-     * Return a primary message
+     * Magic method implementing methods overloading
      *
-     * @param  string|null  $message
-     * @param  bool  $important
+     * @param $name
+     * @param $arguments
      * @return $this
      */
-    public function primary($message = null, $important = false)
+    public function __call($name = '', $arguments = [])
     {
-        return $this->message($message, 'primary', $important);
-    }
+        if (in_array($name, $this->allowedMethods)) {
 
-    /**
-     * Return a secondary message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function secondary($message = null, $important = false)
-    {
-        return $this->message($message, 'secondary', $important);
-    }
+            // Return the same object without changes if no argument passed
+            if (empty($arguments)) {
+                return $this;
+            }
 
-    /**
-     * Return a success message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function success($message = null, $important = false)
-    {
-        return $this->message($message, 'success', $important);
-    }
-
-    /**
-     * Return an error message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function error($message = null, $important = false)
-    {
-        return $this->danger($message, $important);
-    }
-
-    /**
-     * Return a danger message
-     * Alias to error()
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function danger($message = null, $important = false)
-    {
-        return $this->message($message, 'danger', $important);
-    }
-
-    /**
-     * Return a warning message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function warning($message = null, $important = false)
-    {
-        return $this->message($message, 'warning', $important);
-    }
-
-    /**
-     * Return an information message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function info($message = null, $important = false)
-    {
-        return $this->message($message, 'info', $important);
-    }
-
-    /**
-     * Return a simple light message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function light($message = null, $important = false)
-    {
-        return $this->message($message, 'light', $important);
-    }
-
-    /**
-     * Return a simple dark message
-     *
-     * @param  string|null  $message
-     * @param  bool  $important
-     * @return $this
-     */
-    public function dark($message = null, $important = false)
-    {
-        return $this->message($message, 'light', $important);
+            if (count($arguments) > 1) {
+                return $this->$name($arguments[0], $arguments[1]);
+            } else {
+                return $this->$name($arguments[0]);
+            }
+        }
     }
 
     /**
@@ -187,6 +109,115 @@ class FlashNotifier
         $this->messages = collect();
 
         return $this;
+    }
+
+    /**
+     * Return a primary message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function primary($message = null, $important = false)
+    {
+        return $this->message($message, 'primary', $important);
+    }
+
+    /**
+     * Return a secondary message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function secondary($message = null, $important = false)
+    {
+        return $this->message($message, 'secondary', $important);
+    }
+
+    /**
+     * Return a success message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function success($message = null, $important = false)
+    {
+        return $this->message($message, 'success', $important);
+    }
+
+    /**
+     * Return a warning message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function warning($message = null, $important = false)
+    {
+        return $this->message($message, 'warning', $important);
+    }
+
+    /**
+     * Return an information message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function info($message = null, $important = false)
+    {
+        return $this->message($message, 'info', $important);
+    }
+
+    /**
+     * Return an error message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function error($message = null, $important = false)
+    {
+        return $this->danger($message, $important);
+    }
+
+    /**
+     * Return a danger message
+     * Alias to error()
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function danger($message = null, $important = false)
+    {
+        return $this->message($message, 'danger', $important);
+    }
+
+    /**
+     * Return a simple light message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function light($message = null, $important = false)
+    {
+        return $this->message($message, 'light', $important);
+    }
+
+    /**
+     * Return a simple dark message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function dark($message = null, $important = false)
+    {
+        return $this->message($message, 'light', $important);
     }
 
     /**
