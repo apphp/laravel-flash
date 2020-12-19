@@ -205,3 +205,5 @@ This package doesn't includes Bootstrap or any other styling or frontend assets 
 </body>
 </html>
 ```
+
+![All Types of Messages](https://raw.githubusercontent.com/apphp/flash/master/images/messages-all-types.png)
