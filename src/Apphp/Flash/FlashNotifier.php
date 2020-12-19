@@ -84,7 +84,7 @@ class FlashNotifier
     }
 
     /**
-     * Return an error message
+     * Return a danger message
      * Alias to error()
      *
      * @param  string|null  $message
@@ -128,6 +128,18 @@ class FlashNotifier
      * @return $this
      */
     public function light($message = null, $important = false)
+    {
+        return $this->message($message, 'light', $important);
+    }
+
+    /**
+     * Return a simple dark message
+     *
+     * @param  string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    public function dark($message = null, $important = false)
     {
         return $this->message($message, 'light', $important);
     }

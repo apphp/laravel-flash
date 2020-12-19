@@ -13,6 +13,10 @@ if ( ! function_exists('flash')) {
     {
         $notifier = app('flash');
 
+        if ($level === 'error') {
+            $level = 'danger';
+        }
+
         if ( ! is_null($message)) {
             return $notifier->message($message, $level, $important);
         }

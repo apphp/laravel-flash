@@ -49,29 +49,43 @@ public function store()
 }
 ```
 
-You may also define following flash messages:
+The general way to define a flash message is a following:
+```php
+flash()->danger('The error message')->important();
+flash()->info('The info message');
+```
 
-| method                                    | description                                                                   |
-|-------------------------------------------|-------------------------------------------------------------------------------|
-| `flash('your-message', 'primary')`        | Set the flash type to "primary".                                              |
-| `flash('your-message', 'secondary')`      | Set the flash type to "secondary".                                            |
-| `flash('your-message', 'success')`        | Set the flash type to "success".                                              |
-| `flash('your-message', 'warning')`        | Set the flash type to "warning".                                              |
-| `flash('your-message', 'danger')`         | Set the flash type to "error".                                                |
-| `flash('your-message', 'error')`          | Set the flash type to "error" (alias to "danger") without a close button.     |
-| `flash('your-message', 'error', true)`    | Set the flash type to "error" with a close button to the flash message.       |
-| `flash('your-message', 'light')`          | Set the flash type to "light".                                                |
+But you may use a shorter syntax:
+```php
+flash('The error message', true);
+flash('The info message');
+```
 
-You may also use facade directly:
+You may also define the following flash messages:
+
+| method                                    | description                                                               |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `flash('your-message', 'primary')`        | Set the flash type to "primary".                                          |
+| `flash('your-message', 'secondary')`      | Set the flash type to "secondary".                                        |
+| `flash('your-message', 'success')`        | Set the flash type to "success".                                          |
+| `flash('your-message', 'warning')`        | Set the flash type to "warning".                                          |
+| `flash('your-message', 'info')`           | Set the flash type to "info".                                             |
+| `flash('your-message', 'danger')`         | Set the flash type to "error".                                            |
+| `flash('your-message', 'error')`          | Set the flash type to "error" (alias to "danger") w/o a close button.     |
+| `flash('your-message', 'error', true)`    | Set the flash type to "error" with a close button to the message.         |
+| `flash('your-message', 'light')`          | Set the flash type to "light".                                            |
+| `flash('your-message', 'dark')`           | Set the flash type to "dark".                                            |
+
+You may also define messages, by using Flash facade:
 ```php
 use Apphp\Flash\Flash;
 ```
 
-| method                                    | description                                                                   |
-|-------------------------------------------|-------------------------------------------------------------------------------|
-| `Flash::success('your-message')`          | Set the success flash message.                                                |
-| `Flash::error('your-message')`            | Set the flash type to "error" without a close button to the flash message.    |
-| `Flash::error('your-message', true)`      | Set the flash type to "error" with a close button to the flash message.       |
+| method                                    | description                                                                |
+|-------------------------------------------|----------------------------------------------------------------------------|
+| `Flash::success('your-message')`          | Set the success flash message.                                             |
+| `Flash::error('your-message')`            | Set the flash type to "error" w/o a close button to the message.           |
+| `Flash::error('your-message', true)`      | Set the flash type to "error" with a close button to the message.          |
 etc.
 
 
@@ -158,7 +172,7 @@ div.alert:not(.alert-important) {
 ``` 
 
 
-## Customization
+## Customize Views 
 
 To change HTML template of the message or use your own, publish view file and customize it according to suit your needs.
 ```php
