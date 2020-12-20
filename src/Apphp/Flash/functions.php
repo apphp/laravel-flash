@@ -4,7 +4,7 @@ if ( ! function_exists('flash')) {
     /**
      * Arrange for a flash messages
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  string  $level
      * @param  bool  $important
      * @return \Apphp\Flash\FlashNotifier

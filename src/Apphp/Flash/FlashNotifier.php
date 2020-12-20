@@ -69,18 +69,24 @@ class FlashNotifier
     /**
      * Save a message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $messageContent
      * @param  string|null  $level
      * @param  bool  $important
      * @return $this
      */
-    public function message($message = null, $level = null, $important = false)
+    public function message($messageContent = null, $level = null, $important = false)
     {
-        if ( ! $message instanceof Message) {
-            $message = new Message(compact('message', 'level'));
+        if ( ! $messageContent instanceof Message) {
+            $title = '';
+            $message = $messageContent;
+            if (is_array($messageContent)) {
+                $title = $messageContent[0] ?? '';
+                $message = $messageContent[1] ?? '';
+            }
+            $messageContent = new Message(compact('title', 'message', 'level'));
         }
 
-        $this->messages->push($message);
+        $this->messages->push($messageContent);
 
         if ($important) {
             $this->important();

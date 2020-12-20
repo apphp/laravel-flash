@@ -55,9 +55,17 @@ flash()->danger('The error message')->important();
 flash()->info('The info message');
 ```
 
+If you want to specify a title for alert, pass 2 arguments in the following way:
+```php
+flash()->success(['Success', 'Operation has been successfully completed']);
+```
+![Message with title](https://raw.githubusercontent.com/apphp/flash/master/images/message-with-title.png)
+
+
 But you may use a shorter syntax:
 ```php
-flash('The error message', true);
+flash(['Error', 'The error message'], 'error', true);
+flash('The info message', true);
 flash('The info message');
 ```
 
