@@ -54,6 +54,7 @@ The general way to define a flash message is a following:
 flash()->danger('The error message')->important();
 flash()->info('The info message');
 ```
+![Simple message](https://raw.githubusercontent.com/apphp/laravel-flash/master/images/message-simple.png)
 
 If you want to specify a title for alert, pass 2 arguments in the following way:
 ```php
