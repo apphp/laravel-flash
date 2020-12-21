@@ -8,7 +8,7 @@ This package allows to use Bootstrap 3/4/5 flash messaging for Laravel 6+ framew
 
 ## Requirements
 
-* PHP >=7.0
+* PHP >=7.1
 * Laravel 6+
 * Bootstrap 3+
 

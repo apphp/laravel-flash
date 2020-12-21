@@ -1,6 +1,7 @@
 Version 1.5.0 -
 ----------------------------
 - New: added possibility to create alert messages with titles
+- Eng: code styling changed to PHP 7.1 compatibility
 
 
 Version 1.4.0 - Dec 19, 2020
