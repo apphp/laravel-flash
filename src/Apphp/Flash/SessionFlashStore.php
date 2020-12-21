@@ -26,9 +26,9 @@ class SessionFlashStore
      * Flashes a message to the session.
      *
      * @param  string  $name
-     * @param  array  $data
+     * @param  array|object  $data
      */
-    public function flash(string $name, array $data)
+    public function flash(string $name, $data)
     {
         $this->session->flash($name, $data);
     }
