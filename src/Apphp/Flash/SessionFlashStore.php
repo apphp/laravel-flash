@@ -28,7 +28,7 @@ class SessionFlashStore
      * @param  string  $name
      * @param  array  $data
      */
-    public function flash($name, $data)
+    public function flash(string $name, array $data)
     {
         $this->session->flash($name, $data);
     }

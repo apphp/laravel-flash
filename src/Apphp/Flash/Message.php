@@ -40,7 +40,7 @@ class Message implements ArrayAccess
      *
      * @param  array  $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         $this->update($attributes);
     }
@@ -51,7 +51,7 @@ class Message implements ArrayAccess
      * @param  array  $attributes
      * @return $this
      */
-    public function update($attributes = [])
+    public function update(array $attributes = [])
     {
         $attributes = array_filter($attributes);
 

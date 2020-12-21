@@ -45,11 +45,11 @@ class FlashNotifier
     /**
      * Magic method implementing methods overloading
      *
-     * @param $name
-     * @param $arguments
+     * @param string $name
+     * @param array $arguments
      * @return $this
      */
-    public function __call($name = '', $arguments = [])
+    public function __call(string $name = '', array $arguments = [])
     {
         if (in_array($name, $this->allowedMethods)) {
 
@@ -74,7 +74,7 @@ class FlashNotifier
      * @param  bool  $important
      * @return $this
      */
-    public function message($messageContent = null, $level = null, $important = false)
+    public function message($messageContent = null, ?string $level = null, bool $important = false)
     {
         if ( ! $messageContent instanceof Message) {
             $title = '';
@@ -120,11 +120,11 @@ class FlashNotifier
     /**
      * Return a primary message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function primary($message = null, $important = false)
+    protected function primary($message = null, bool $important = false)
     {
         return $this->message($message, 'primary', $important);
     }
@@ -132,11 +132,11 @@ class FlashNotifier
     /**
      * Return a secondary message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function secondary($message = null, $important = false)
+    protected function secondary($message = null, bool $important = false)
     {
         return $this->message($message, 'secondary', $important);
     }
@@ -144,11 +144,11 @@ class FlashNotifier
     /**
      * Return a success message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function success($message = null, $important = false)
+    protected function success($message = null, bool $important = false)
     {
         return $this->message($message, 'success', $important);
     }
@@ -156,11 +156,11 @@ class FlashNotifier
     /**
      * Return a warning message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function warning($message = null, $important = false)
+    protected function warning($message = null, bool $important = false)
     {
         return $this->message($message, 'warning', $important);
     }
@@ -168,11 +168,11 @@ class FlashNotifier
     /**
      * Return an information message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function info($message = null, $important = false)
+    protected function info($message = null, bool $important = false)
     {
         return $this->message($message, 'info', $important);
     }
@@ -180,11 +180,11 @@ class FlashNotifier
     /**
      * Return an error message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function error($message = null, $important = false)
+    protected function error($message = null, bool $important = false)
     {
         return $this->danger($message, $important);
     }
@@ -193,11 +193,11 @@ class FlashNotifier
      * Return a danger message
      * Alias to error()
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function danger($message = null, $important = false)
+    protected function danger($message = null, bool $important = false)
     {
         return $this->message($message, 'danger', $important);
     }
@@ -205,11 +205,11 @@ class FlashNotifier
     /**
      * Return a simple light message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function light($message = null, $important = false)
+    protected function light($message = null, bool $important = false)
     {
         return $this->message($message, 'light', $important);
     }
@@ -217,11 +217,11 @@ class FlashNotifier
     /**
      * Return a simple dark message
      *
-     * @param  string|null  $message
+     * @param  array|string|null  $message
      * @param  bool  $important
      * @return $this
      */
-    protected function dark($message = null, $important = false)
+    protected function dark($message = null, bool $important = false)
     {
         return $this->message($message, 'light', $important);
     }
@@ -232,7 +232,7 @@ class FlashNotifier
      * @param  array  $overrides
      * @return $this
      */
-    protected function updateLastMessage($overrides = [])
+    protected function updateLastMessage(array $overrides = [])
     {
         $this->messages->last()->update($overrides);
 

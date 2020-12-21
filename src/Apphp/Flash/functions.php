@@ -9,7 +9,7 @@ if ( ! function_exists('flash')) {
      * @param  bool  $important
      * @return \Apphp\Flash\FlashNotifier
      */
-    function flash($message = null, $level = 'info', $important = false)
+    function flash($message = null, string $level = 'info', bool $important = false)
     {
         $notifier = app('flash');
 
