@@ -24,7 +24,7 @@ Copyright © 2020 [ApPHP](https://www.apphp.com/).
 Begin by pulling in the package through Composer.
 
 ```bash
-composer require apphp/flash
+composer require apphp/laravel-flash
 ```
 
 Next, make sure the default CSS classes for your flash message are optimized for Bootstrap. You may either pull in the Bootstrap's CSS 
@@ -59,7 +59,7 @@ If you want to specify a title for alert, pass 2 arguments in the following way:
 ```php
 flash()->success(['Success', 'Operation has been successfully completed']);
 ```
-![Message with title](https://raw.githubusercontent.com/apphp/flash/master/images/message-with-title.png)
+![Message with title](https://raw.githubusercontent.com/apphp/laravel-flash/master/images/message-with-title.png)
 
 
 But you may use a shorter syntax:
@@ -215,7 +215,7 @@ This package doesn't includes Bootstrap or any other styling or frontend assets 
 ```
 
 #### All Types of Messages
-![All Types of Messages](https://raw.githubusercontent.com/apphp/flash/master/images/messages-all-types.png)
+![All Types of Messages](https://raw.githubusercontent.com/apphp/laravel-flash/master/images/messages-all-types.png)
 
 #### Messages with Titles
-![All Types of Messages](https://raw.githubusercontent.com/apphp/flash/master/images/messages-with-titles.png)
+![All Types of Messages](https://raw.githubusercontent.com/apphp/laravel-flash/master/images/messages-with-titles.png)
