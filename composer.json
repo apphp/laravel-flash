@@ -27,6 +27,11 @@
             "src/Apphp/Flash/functions.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Apphp\\Flash\\Test\\": "tests"
+        }
+    },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
