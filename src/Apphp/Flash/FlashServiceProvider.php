@@ -8,15 +8,23 @@ use Illuminate\Support\ServiceProvider;
 class FlashServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of this provider is deferred
+     * Bootstrap the application events
      *
-     * @var bool
+     * @return void
      */
-    protected $defer = false;
+    public function boot()
+    {
+        // Prepare dir to work in Windows and Linux environments
+        $dir = rtrim(__DIR__, '/');
+
+        $this->loadViewsFrom($dir.'/../views', 'flash');
+
+        $this->publishViews($dir);
+        $this->publishConfig($dir);
+    }
 
     /**
      * Register service provider
-     *
      * @return void
      */
     public function register()
@@ -34,22 +42,25 @@ class FlashServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap the application events
-     *
-     * @return void
+     * Publish views
+     * @param  string  $dir
      */
-    public function boot()
+    protected function publishViews(string $dir = '')
     {
-        // Prepare dir to work in Win and Lin environments
-        $dir = rtrim(__DIR__, '/');
+        $this->publishes([
+            $dir.'/../views' => base_path('resources/views/vendor/flash')
+        ], 'laravel-flash:views');
+    }
 
-        $this->loadViewsFrom($dir.'/../views', 'flash');
-
-        $this->publishes(
-            [
-                $dir.'/../views' => base_path('resources/views/vendor/flash')
-            ]
-        );
+    /**
+     * Publish config
+     * @param  string  $dir
+     */
+    protected function publishConfig(string $dir = '')
+    {
+        $this->publishes([
+            $dir.'/../config/flash.php' => config_path('flash.php')
+        ], 'laravel-flash:config');
     }
 
 }
