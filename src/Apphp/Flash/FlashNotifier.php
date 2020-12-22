@@ -82,6 +82,9 @@ class FlashNotifier
             if (is_array($messageContent)) {
                 $title = $messageContent[0] ?? '';
                 $message = $messageContent[1] ?? '';
+                if (empty($message)) {
+                    $message = config('flash.messages.'.$level);
+                }
             }
             $messageContent = new Message(compact('title', 'message', 'level'));
         }

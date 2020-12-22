@@ -1,7 +1,13 @@
 @foreach (session('flash_notification', collect())->toArray() as $message)
     <div class="alert alert-{{ $message['level'] }}{{ $message['important'] ? ' alert-important' : '' }}" role="alert">
         @if (!$message['important'])
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            @if(config('flash.bootstrapVersion') == 3)
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            @else
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            @endif
         @endif
         @if($message['title'])
             <h4 class="alert-heading">{{$message['title']}}</h4>

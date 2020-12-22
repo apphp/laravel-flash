@@ -1,19 +1,20 @@
 Version 1.5.1 -
 ----------------------------
 - New: added possibility to specify default config
+- New: added possibility to specify default messages and message level
 - Fix: error on wrong type of 2nd param in SessionFlashStore::flash()
 
 
 Version 1.5.0 - Dec 21, 2020
 ----------------------------
 - New: added possibility to create alert messages with titles
-- Eng: code styling changed to PHP 7.1 compatibility
+- Enh: code styling changed to PHP 7.1 compatibility
 
 
 Version 1.4.0 - Dec 19, 2020
 ----------------------------
 - New: added possibility to define "dark" message
-- Eng: possibility to use short syntax
+- Enh: possibility to use short syntax
 - Fix: wrong rendering on "error" message
 - Fix: rendering empty messages when use chained empty methods warning()->error();
 

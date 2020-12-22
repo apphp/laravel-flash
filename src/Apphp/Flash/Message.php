@@ -26,7 +26,7 @@ class Message implements ArrayAccess
      *
      * @var string
      */
-    public $level = 'info';
+    public $level = '';
 
     /**
      * Whether this message important or not
@@ -43,6 +43,10 @@ class Message implements ArrayAccess
     public function __construct(array $attributes = [])
     {
         $this->update($attributes);
+
+        if ($this->level == '') {
+            $this->level = config('flash.defaultLevel');
+        }
     }
 
     /**
