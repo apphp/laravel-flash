@@ -13,6 +13,11 @@ return [
     'defaultLevel' => 'info',
 
     /*
+     * Specifies default message level
+     */
+    'validationColor' => '#f8bcca',
+
+    /*
      * Default messages used for all available alert types
      */
     'messages' => [
@@ -40,6 +45,11 @@ return [
          * Default danger message
          */
         'danger' => 'An error occurred while executing this operation',
+
+        /*
+         * Default validation message
+         */
+        'validation' => 'Validation had not been passed',
 
     ],
 

@@ -1,5 +1,9 @@
 @foreach (session('flash_notification', collect())->toArray() as $message)
-    <div class="alert alert-{{ $message['level'] }}{{ $message['important'] ? ' alert-important' : '' }}" role="alert">
+    <div
+        class="alert alert-{{ $message['level'] }}{{ $message['important'] ? ' alert-important' : '' }}"
+        {{ $message['level'] == 'validation' ? 'style="background-color:'.config('flash.validationColor').'"' : '' }}
+        role="alert"
+    >
         @if (!$message['important'])
             @if(config('flash.bootstrapVersion') == 3)
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

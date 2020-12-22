@@ -28,7 +28,7 @@ class FlashNotifier
      * Collection of allowed methods
      * @var array
      */
-    protected $allowedMethods = ['primary', 'secondary', 'success', 'warning', 'info', 'error', 'danger', 'light', 'dark'];
+    protected $allowedMethods = ['primary', 'secondary', 'success', 'warning', 'info', 'error', 'danger', 'validation', 'light', 'dark'];
 
 
     /**
@@ -203,6 +203,18 @@ class FlashNotifier
     protected function danger($message = null, bool $important = false)
     {
         return $this->message($message, 'danger', $important);
+    }
+
+    /**
+     * Return a validation message
+     *
+     * @param  array|string|null  $message
+     * @param  bool  $important
+     * @return $this
+     */
+    protected function validation($message = null, bool $important = false)
+    {
+        return $this->message($message, 'validation', $important);
     }
 
     /**
