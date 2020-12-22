@@ -2,6 +2,7 @@ Version 1.5.1 -
 ----------------------------
 - New: added possibility to specify default config
 - New: added possibility to specify default messages and message level
+- New: new type of alerts - validation
 - Fix: error on wrong type of 2nd param in SessionFlashStore::flash()
 
 
