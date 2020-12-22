@@ -2,11 +2,11 @@
 
 namespace Apphp\Flash\Test;
 
-use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Apphp\Flash\FlashServiceProvider;
 
 
-abstract class TestCase extends Orchestra
+abstract class TestCase extends BaseTestCase
 {
     /**
      * Setup the test environment.

@@ -1,3 +1,8 @@
+Version 1.6.x -
+----------------------------
+- Fix: in tests classes definition
+
+
 Version 1.6.0 - Dec 22, 2020
 ----------------------------
 - New: added possibility to specify default config
