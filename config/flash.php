@@ -27,7 +27,8 @@ return [
     |
     | Specifies default validation message background color
     */
-    'validationColor' => '#f8bcca',
+    'validationBgColor' => '#ffd9cc',
+    'validationBorderColor' => '#ffc6b3',
 
     /*
     |--------------------------------------------------------------------------
