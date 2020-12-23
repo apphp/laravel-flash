@@ -2,7 +2,7 @@
     <div
         class="alert alert-{{ $message['level'] }}{{ $message['important'] ? ' alert-important' : '' }}"
         @if($message['level'] == 'validation')
-            style="background-color:{{ config('flash.validationBgColor') }};border:1px solid {{ config('flash.validationBgColor') }}"
+            style="background-color:{{ config('flash.validationBgColor') }};border:1px solid {{ config('flash.validationBorderColor') }}"
         @endif
         role="alert"
     >

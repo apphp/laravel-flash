@@ -180,6 +180,12 @@ div.alert:not(.alert-important) {
 </style>
 ``` 
 
+## Configuration
+
+To change default messages and enable some extra features you can export the config file:
+```php
+php artisan vendor:publish --tag=laravel-flash:config
+```
 
 ## Customize Views 
 
@@ -187,6 +193,8 @@ To change HTML template of the message or use your own, publish view file and cu
 ```php
 $ php artisan vendor:publish --tag=laravel-flash:views
 ```
+Now you should have a flash.php file in the config folder of your application. If you need to force to re-publish the config file to use `--force`.
+
 
 ## Example
 
