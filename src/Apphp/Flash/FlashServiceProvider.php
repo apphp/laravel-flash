@@ -7,6 +7,20 @@ use Illuminate\Support\ServiceProvider;
 
 class FlashServiceProvider extends ServiceProvider
 {
+
+    /**
+     * @var string
+     */
+    private $dir = '';
+
+    public function __construct($app)
+    {
+        parent::__construct($app);
+
+        // Prepare dir to work in Windows and Linux environments
+        $this->dir = rtrim(__DIR__, '/');
+    }
+
     /**
      * Bootstrap the application events
      *
@@ -14,21 +28,25 @@ class FlashServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Prepare dir to work in Windows and Linux environments
-        $dir = rtrim(__DIR__, '/');
+        $this->loadViewsFrom($this->dir.'/../views', 'flash');
 
-        $this->loadViewsFrom($dir.'/../views', 'flash');
-
-        $this->publishViews($dir);
-        $this->publishConfig($dir);
+        $this->publishViews();
+        $this->publishConfig();
     }
 
     /**
      * Register service provider
+     *
      * @return void
      */
     public function register()
     {
+        // Use the vendor configuration file
+        $this->mergeConfigFrom(
+            $this->dir.'/../../../config/flash.php',
+            'flash'
+        );
+
         $this->app->bind(
             'Apphp\Flash\SessionFlashStore'
         );
@@ -43,24 +61,28 @@ class FlashServiceProvider extends ServiceProvider
 
     /**
      * Publish views
-     * @param  string  $dir
      */
-    protected function publishViews(string $dir = '')
+    protected function publishViews()
     {
-        $this->publishes([
-            $dir.'/../views' => base_path('resources/views/vendor/flash')
-        ], 'laravel-flash:views');
+        $this->publishes(
+            [
+                $this->dir.'/../views' => base_path('resources/views/vendor/flash')
+            ],
+            'laravel-flash:views'
+        );
     }
 
     /**
      * Publish config
-     * @param  string  $dir
      */
-    protected function publishConfig(string $dir = '')
+    protected function publishConfig()
     {
-        $this->publishes([
-            $dir.'/../../../config/flash.php' => config_path('flash.php')
-        ], 'laravel-flash:config');
+        $this->publishes(
+            [
+                $this->dir = ''.'/../../../config/flash.php' => config_path('flash.php')
+            ],
+            'laravel-flash:config'
+        );
     }
 
 }
