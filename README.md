@@ -183,9 +183,9 @@ div.alert:not(.alert-important) {
 
 ## Customize Views 
 
-To change HTML template of the message or use your own, publish view file and customize it according to suit your needs.
+To change HTML template of the message or use your own, publish view file and customize it to suit your needs.
 ```php
-$ php artisan vendor:publish --provider="Apphp\Flash\FlashServiceProvider"
+$ php artisan vendor:publish --tag=laravel-flash:views
 ```
 
 ## Example
