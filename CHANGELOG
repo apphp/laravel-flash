@@ -2,6 +2,7 @@ Version 1.6.x -
 ----------------------------
 - Fix: in tests classes definition
 - Fix: in publishing of config file
+- Fix: missing auto-registration of config file
 
 
 Version 1.6.0 - Dec 22, 2020

@@ -78,8 +78,9 @@ You may also define the following flash messages:
 | `flash('your-message', 'secondary')`      | Set the flash type to "secondary".                                        |
 | `flash('your-message', 'success')`        | Set the flash type to "success".                                          |
 | `flash('your-message', 'warning')`        | Set the flash type to "warning".                                          |
+| `flash('your-message', 'validation')`     | Set the flash type to "validation".                                       |
 | `flash('your-message', 'info')`           | Set the flash type to "info".                                             |
-| `flash('your-message', 'danger')`         | Set the flash type to "error".                                            |
+| `flash('your-message', 'danger')`         | Set the flash type to "danger".                                           |
 | `flash('your-message', 'error')`          | Set the flash type to "error" (alias to "danger") w/o a close button.     |
 | `flash('your-message', 'error', true)`    | Set the flash type to "error" with a close button to the message.         |
 | `flash('your-message', 'light')`          | Set the flash type to "light".                                            |
