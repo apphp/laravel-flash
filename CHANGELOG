@@ -1,9 +1,12 @@
 Version 1.6.x -
 ----------------------------
+- New: added new unit tests
 - Fix: in tests classes definition
 - Fix: in publishing of config file
 - Fix: missing auto-registration of config file
 - Fix: error while config file publishing
+- Fix: error on rendering dark message
+- Fix: added wrong level validation on drawing flash message
 
 
 Version 1.6.0 - Dec 22, 2020

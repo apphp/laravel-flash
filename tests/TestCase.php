@@ -1,6 +1,6 @@
 <?php
 
-namespace Apphp\Flash\Test;
+namespace Apphp\Flash\Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Apphp\Flash\FlashServiceProvider;

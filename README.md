@@ -72,7 +72,7 @@ flash('The info message');
 
 You may also define the following flash messages:
 
-| method                                    | description                                                               |
+| Method                                    | Description                                                               |
 |-------------------------------------------|---------------------------------------------------------------------------|
 | `flash('your-message', 'primary')`        | Set the flash type to "primary".                                          |
 | `flash('your-message', 'secondary')`      | Set the flash type to "secondary".                                        |
@@ -91,7 +91,7 @@ You may also define messages, by using Flash facade:
 use Apphp\Flash\Flash;
 ```
 
-| method                                    | description                                                                |
+| Method                                    | Description                                                                |
 |-------------------------------------------|----------------------------------------------------------------------------|
 | `Flash::success('your-message')`          | Set the success flash message.                                             |
 | `Flash::error('your-message')`            | Set the flash type to "error" w/o a close button to the message.           |
@@ -184,18 +184,38 @@ div.alert:not(.alert-important) {
 ## Configuration
 
 To change default messages and enable some extra features you can export the config file:
-```php
+```bash
 php artisan vendor:publish --tag=laravel-flash:config
 ```
 
 ## Customize Views 
 
 To change HTML template of the message or use your own, publish view file and customize it to suit your needs.
-```php
+```bash
 $ php artisan vendor:publish --tag=laravel-flash:views
 ```
 Now you should have a flash.php file in the config folder of your application. If you need to force to re-publish the config file to use `--force`.
 
+
+## Testing 
+
+To rum unit testing simply do following:
+```bash
+./vendor/bin/phpunit vendor\\apphp\\laravel-flash\\tests\\TestFlashMessage.php
+```
+
+or your may add additional section to your composer.json file:
+```json
+"scripts": {
+    "tests": "phpunit --colors=always",
+    "test": "phpunit --colors=always --filter",
+}
+```
+
+and then rum unit following command:
+```bash
+composer tests vendor\\apphp\\laravel-flash\\tests\\TestFlashMessage.php
+ ```
 
 ## Example
 
