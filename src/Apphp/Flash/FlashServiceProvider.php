@@ -79,7 +79,7 @@ class FlashServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                $this->dir = ''.'/../../../config/flash.php' => config_path('flash.php')
+                $this->dir.'/../../../config/flash.php' => config_path('flash.php')
             ],
             'laravel-flash:config'
         );
