@@ -238,7 +238,7 @@ class FlashNotifier
      */
     protected function dark($message = null, bool $important = false)
     {
-        return $this->message($message, 'light', $important);
+        return $this->message($message, 'dark', $important);
     }
 
     /**
