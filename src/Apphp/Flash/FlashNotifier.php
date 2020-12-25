@@ -76,6 +76,11 @@ class FlashNotifier
      */
     public function message($messageContent = null, ?string $level = null, bool $important = false)
     {
+        // Validate message level
+        if (!in_array($level, $this->allowedMethods)) {
+            $level = config('flash.messages.defaultLevel');
+        }
+
         if ( ! $messageContent instanceof Message) {
             $title = '';
             $message = $messageContent;
