@@ -32,4 +32,24 @@ class SessionFlashStore
     {
         $this->session->flash($name, $data);
     }
+
+    /**
+     * Remove last message from the session.
+     *
+     * @param  string  $name
+     */
+    public function remove(string $name)
+    {
+        $this->session->remove($name);
+    }
+
+    /**
+     * Forget all message in the session.
+     *
+     * @param  string  $name
+     */
+    public function forget(string $name)
+    {
+        $this->session->forget($name);
+    }
 }

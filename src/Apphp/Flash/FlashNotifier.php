@@ -114,16 +114,34 @@ class FlashNotifier
     }
 
     /**
-     * Clear all messages
+     * Clear last message
      *
      * @return $this
      */
     public function clear()
     {
-        $this->messages = collect();
+        $this->messages->pop();
+        $this->session->forget('_flash');
 
         return $this;
     }
+
+    /**
+     * Clear all messages
+     *
+     * @return $this
+     */
+    public function clearAll()
+    {
+        while (count($this->messages)) {
+            $this->messages->pop();
+        }
+        $this->session->forget('_flash');
+        $this->session->forget('flash_notification');
+
+        return $this;
+    }
+
 
     /**
      * Return a primary message

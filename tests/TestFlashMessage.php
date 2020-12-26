@@ -31,6 +31,42 @@ class TestFlashMessage extends TestCase
     }
 
     /**
+     * Test few messages
+     */
+    public function testFewMessages(): void
+    {
+        flash('Simple message 1', 'info');
+        flash('Simple message 2', 'error');
+        flash('Simple message 3');
+
+        $this->assertEquals(count(session('flash_notification')), 3);
+    }
+
+    /**
+     * Test clearing single message
+     */
+    public function testClearingMessage(): void
+    {
+        flash('Simple message 1', 'info')->clear();
+        flash('Simple message 2', 'error')->clear();
+        flash('Simple message 3')->important();
+
+        $this->assertEquals(count(session('flash_notification')), 1);
+    }
+
+    /**
+     * Test clearing all messages
+     */
+    public function testClearingMessages(): void
+    {
+        flash('Simple message 1', 'info')->clear();
+        flash('Simple message 2', 'error');
+        flash('Simple message 3')->important()->clearAll();
+
+        $this->assertEquals(session('flash_notification'), null);
+    }
+
+    /**
      * Test valid message if it was created via global function
      *
      * @dataProvider validFlashMessagesDataProvider
