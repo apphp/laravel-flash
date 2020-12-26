@@ -1,3 +1,8 @@
+Version 1.7.x - Dec 25, 2020
+----------------------------
+- Enh: added new tests for counting few messages, importancy, clearing
+
+
 Version 1.7.0 - Dec 25, 2020
 ----------------------------
 - New: added new unit tests

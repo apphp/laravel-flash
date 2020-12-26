@@ -14,10 +14,10 @@ class TestFlashMessage extends TestCase
      */
     public function testWrongLevelForFashMessage(): void
     {
-        $alert = Flash::wrongLevel('Flash message');
+        Flash::wrongLevel('Flash message');
         $this->assertEquals(session('flash_notification'), null);
 
-        $alert = flash('Flash message', 'wrong-level');
+        flash('Flash message', 'wrong-level');
         $this->validateFlashMessage('info', '', 'Flash message', false);
     }
 
@@ -26,8 +26,29 @@ class TestFlashMessage extends TestCase
      */
     public function testLevelForSimpleMessage(): void
     {
-        $alert = flash($message = 'Simple message');
+        flash($message = 'Simple message');
         $this->validateFlashMessage('info', '', $message, false);
+    }
+
+    /**
+     * Test importancy for message
+     */
+    public function testImportancyForMessage(): void
+    {
+        $alert = flash($message = 'Simple message 1');
+        $alert = flash($message = 'Simple message 2')->important();
+        $alert = flash($message = 'Simple message 3');
+
+
+        $this->assertEquals($alert->messages[0]->important, false);
+        $this->assertEquals($alert->messages[1]->important, true);
+        $this->assertEquals($alert->messages[2]->important, false);
+
+        $alert->important();
+
+        $this->assertEquals($alert->messages[0]->important, false);
+        $this->assertEquals($alert->messages[1]->important, true);
+        $this->assertEquals($alert->messages[2]->important, true);
     }
 
     /**
