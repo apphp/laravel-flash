@@ -92,6 +92,7 @@ class Message implements ArrayAccess
      * Assign the offset.
      *
      * @param  mixed  $offset
+     * @param $value
      * @return void
      */
     public function offsetSet($offset, $value)

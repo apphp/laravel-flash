@@ -31,7 +31,7 @@ class TestFlashMessage extends TestCase
     }
 
     /**
-     * Test importancy for message
+     * Test importance for message
      */
     public function testImportancyForMessage(): void
     {

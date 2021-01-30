@@ -2,6 +2,7 @@
 
 namespace Apphp\Flash\Tests;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Apphp\Flash\FlashServiceProvider;
 
@@ -20,12 +21,9 @@ abstract class TestCase extends BaseTestCase
 
     /**
      * Get package providers.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders()
     {
         return [FlashServiceProvider::class];
     }

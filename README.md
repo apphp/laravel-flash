@@ -171,12 +171,12 @@ div.alert:not(.alert-important) {
 @keyframes cssAnimation {
     0%   {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
     90%  {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
-    100% {opacity: 0; height:0px; padding:0; margin:0;}
+    100% {opacity: 0; height:0; padding:0; margin:0;}
 }
 @-webkit-keyframes cssAnimation {
     0%   {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
     90%  {opacity: 1; height:auto; padding: 0.75rem 1.25rem; margin-bottom: 1rem;}
-    100% {opacity: 0; height:0px; padding:0; margin:0;}
+    100% {opacity: 0; height:0; padding:0; margin:0;}
 }
 </style>
 ``` 
@@ -227,7 +227,7 @@ This package doesn't includes Bootstrap or any other styling or frontend assets 
 <head>
     <meta charset="UTF-8">
     <title>Document Title</title>
-    <link rel="stylesheet" href="//getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -237,8 +237,8 @@ This package doesn't includes Bootstrap or any other styling or frontend assets 
     <p>Welcome to my website...</p>
 </div>
 
-<script src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 </body>
 </html>

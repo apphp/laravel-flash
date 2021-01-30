@@ -1,6 +1,11 @@
+Version 1.8.x -
+----------------------------
+- Fix: code cleanup
+
+
 Version 1.7.1 - Dec 26, 2020
 ----------------------------
-- Enh: added new tests for counting few messages, importancy, clearing
+- Enh: added new tests for counting few messages, importance, clearing
 - Fix: testing call travis.xml
 
 

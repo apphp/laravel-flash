@@ -4,6 +4,7 @@ namespace Apphp\Flash;
 
 use Apphp\Flash\SessionFlashStore;
 use Illuminate\Support\Traits\Macroable;
+use Illuminate\Support\Collection;
 
 
 class FlashNotifier
@@ -20,7 +21,7 @@ class FlashNotifier
     /**
      * Collection of messages
      *
-     * @var \Illuminate\Support\Collection
+     * @var Collection
      */
     public $messages;
 
@@ -45,9 +46,9 @@ class FlashNotifier
     /**
      * Magic method implementing methods overloading
      *
-     * @param string $name
-     * @param array $arguments
-     * @return $this
+     * @param  string  $name
+     * @param  array  $arguments
+     * @return FlashNotifier
      */
     public function __call(string $name = '', array $arguments = [])
     {
@@ -64,6 +65,8 @@ class FlashNotifier
                 return $this->$name($arguments[0]);
             }
         }
+
+        return $this;
     }
 
     /**
