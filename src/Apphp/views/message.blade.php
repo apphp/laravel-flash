@@ -26,4 +26,4 @@
         @endif
     </div>
 @endforeach
-{{ session()->forget('flash_notification') }}
+@php session()->forget('flash_notification') @endphp
