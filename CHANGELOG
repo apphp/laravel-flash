@@ -1,5 +1,6 @@
-Version 1.8.x -
+Version 1.8.1 - Jul 24, 2023
 ----------------------------
+- Enh: added support for v7,8,9,10 of illuminate/support
 - Fix: code cleanup
 
 
